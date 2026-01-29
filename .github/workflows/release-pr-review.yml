@@ -33,6 +33,7 @@ jobs:
             const headBranch = context.payload.workflow_run?.head_branch;
             const manualPr = process.env.MANUAL_PR_NUMBER;
 
+            /*
             if (context.eventName === 'workflow_dispatch') {
               if (!manualPr) {
                 core.setFailed('workflow_dispatch requires pr_number input.');
@@ -53,6 +54,7 @@ jobs:
               core.setOutput('head_sha', pr.head.sha);
               return;
             }
+            */
 
             const searchQuery = `repo:${context.repo.owner}/${context.repo.repo} is:pr is:open head:changeset-release/`;
             const { data: searchResults } = await github.rest.search.issuesAndPullRequests({
