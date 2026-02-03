@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+echo "RCE" >&2
+
 remote="${1:-origin}"
 pattern="${2:-v*}"
 
